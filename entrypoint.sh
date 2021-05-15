@@ -1,8 +1,20 @@
-#!/bin/bash
-mkdir 1
+#!/bin/sh
 
-if [ $? == 0 ]
-then
-	echo "starting nginx"
-	nginx -g "daemon off;"
-fi
+# Replace the hostname in the container
+sed -i.bak 's/HOSTNAME/'"$HOSTNAME"'/g' /usr/share/nginx/html/index.html
+
+# Startup the cmd
+exec "$@"
+
+
+
+
+
+
+
+#!/bin/bash
+#MY_NAME=Max
+#echo "The MY_NAME is: ${MY_NAME}
+
+
+# do stuff ...

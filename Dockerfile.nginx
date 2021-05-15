@@ -1,9 +1,8 @@
 FROM nginx:latest
-
 WORKDIR /etc/nginx
 COPY ./index.html /usr/share/nginx/html/index.html
 COPY ./entrypoint.sh entrypoint.sh
 
 RUN chmod u+x entrypoint.sh
 CMD ["./entrypoint.sh"]
-
+HEALTHCHECK --interval=15s --timeout=15s --start-period=60s CMD python ./healthcheck.py
