@@ -1,0 +1,9 @@
+FROM nginx:latest
+
+WORKDIR /etc/nginx
+COPY ./index.html /usr/share/nginx/html/index.html
+COPY ./entrypoint.sh entrypoint.sh
+
+RUN chmod u+x entrypoint.sh
+CMD ["./entrypoint.sh"]
+
