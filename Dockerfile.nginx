@@ -3,7 +3,7 @@ WORKDIR /etc/nginx
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./index.html /usr/share/nginx/html/index.html
 COPY ./entrypoint.sh entrypoint.sh
-
+ENV NAME Max
 RUN chmod u+x entrypoint.sh
 CMD ["./entrypoint.sh"]
 HEALTHCHECK --interval=15s --timeout=15s --start-period=60s CMD python ./healthcheck.py

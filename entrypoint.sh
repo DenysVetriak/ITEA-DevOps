@@ -1,6 +1,8 @@
 #!/bin/bash
-export MY_NAME=$Max
+set  MY_NAME=$Max
 echo "The MY_NAME is: ${MY_NAME}"
 
+echo "Starting nginx"
+nginx -g 'daemon off;'
 
 # do stuff ...
