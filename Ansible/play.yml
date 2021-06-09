@@ -1,0 +1,9 @@
+- hosts: stage
+  become: true
+  become_method: sudo
+  vars:
+    admin_group: itea
+    env: dev
+  roles:
+    - nginx
+    #- admin-users
